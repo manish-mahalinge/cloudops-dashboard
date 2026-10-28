@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cloudops-service
+  labels:
+    app: cloudops-dashboard
+spec:
+  type: ClusterIP
+
+  selector:
+    app: cloudops-dashboard
+
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+      protocol: TCP
